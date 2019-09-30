@@ -7,13 +7,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="particles.json"></script>
 
 </head>
 <body>
+
+<div id="particles-js"></div>
     <div class="warpper">
         <div id="app-4">
+            <div class="topic">
+                <h1>To Do App</h1>
+            </div>
             <div class="inside">
-                <input type="text" v-model="tag" v-on:keyUp.enter="add">
+                <input type="text" placeholder="Enter something" v-model="tag" v-on:keyUp.enter="add">
                 <button v-on:click="add" class="buttn">Add Item</button>
             </div>
                 <ol class="todo">
@@ -27,6 +34,7 @@
                 </ol>
        </div>
     </div>
+
 </body>
 <script> 
     var app4 = new Vue({
@@ -55,7 +63,8 @@
   },
 })
 
-
-
+particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
 </script>
 </html>
